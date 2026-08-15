@@ -85,7 +85,7 @@ $ npm install
 # 5. Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
-💡 Aprendizados e Desafios
+## 💡 Aprendizados e Desafios
 Este projeto permitiu consolidar diversos conhecimentos práticos de desenvolvimento de software e produto:
 
 Foco em UX/UI em Cenários Reais: Compreender a dor do usuário (perda de estoque e margens de lucro reduzidas) e traduzir isso em telas funcionais, simples e limpas no Figma.
@@ -94,12 +94,12 @@ Integração de Backend e Banco de Dados: Modelagem e manipulação de tabelas r
 
 Engenharia de Prompts & IA: Aprendizado em como atuar como arquiteto(a) do sistema, utilizando o Google AI Studio para agilizar a escrita de código TypeScript (.tsx) mantendo total controle técnico sobre o resultado final.
 
-✍️ Autor(a)
+## ✍️ Autor(a)
 Desenvolvido por Evelyn Barreto Bastos 👋
 
 Estudante de Análise e Desenvolvimento de Sistemas (ADS).
 
 Em constante busca por aprendizado, aprimoramento técnico e evolução na área de UX/UI e Desenvolvimento de Software.
 
-📄 Licença
+## 📄 Licença
 Este projeto está sob a licença MIT — consulte o arquivo LICENSE para mais detalhes.

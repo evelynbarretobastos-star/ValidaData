@@ -1,3 +1,17 @@
+<div align="center">
+
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+  <h1>Built with AI Studio</h1>
+
+  <p>The fastest path from prompt to production with Gemini.</p>
+
+  <a href="https://aistudio.google.com/apps">Start building</a>
+
+</div>
+
+---
+
 # 🏷️ ValidaData
 
 > **ValidaData** é uma aplicação desenvolvida para simplificar e otimizar o controle de validade de lotes de produtos (como doces e confeitos) em supermercados e comércios, unindo alta usabilidade e eficiência operacional.
@@ -67,6 +81,8 @@ Antes de começar, você precisará ter instalado em sua máquina:
 * [PostgreSQL](https://www.postgresql.org/)
 * [VS Code](https://code.visualstudio.com/) ou outro editor de sua preferência
 
+---
+
 ### 🚀 Passo a Passo
 
 ```bash
@@ -87,7 +103,7 @@ $ npm run dev
 
 ---
 
-## 💡 Aprendizados e Desafios
+###💡 Aprendizados e Desafios
 Este projeto permitiu consolidar diversos conhecimentos práticos de desenvolvimento de software e produto:
 
 Foco em UX/UI em Cenários Reais: Compreender a dor do usuário (perda de estoque e margens de lucro reduzidas) e traduzir isso em telas funcionais, simples e limpas no Figma.
@@ -98,7 +114,7 @@ Engenharia de Prompts & IA: Aprendizado em como atuar como arquiteto(a) do siste
 
 ---
 
-## ✍️ Autor(a)
+###✍️ Autor(a)
 Desenvolvido por Evelyn Barreto Bastos 👋
 
 Estudante de Análise e Desenvolvimento de Sistemas (ADS).
@@ -107,5 +123,5 @@ Em constante busca por aprendizado, aprimoramento técnico e evolução na área
 
 ---
 
-## 📄 Licença
+###📄 Licença
 Este projeto está sob a licença MIT — consulte o arquivo LICENSE para mais detalhes.

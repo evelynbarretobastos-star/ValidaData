@@ -1,3 +1,17 @@
+<div align="center">
+
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+  <h1>Built with AI Studio</h1>
+
+  <p>The fastest path from prompt to production with Gemini.</p>
+
+  <a href="https://aistudio.google.com/apps">Start building</a>
+
+</div>
+
+---
+
 # 🏷️ ValidaData
 
 > **ValidaData** é uma aplicação desenvolvida para simplificar e otimizar o controle de validade de lotes de produtos (como doces e confeitos) em supermercados e comércios, unindo alta usabilidade e eficiência operacional.
@@ -63,51 +77,47 @@ O **ValidaData** foi desenhado com foco total na usabilidade do dia a dia do ope
 
 ### Pré-requisitos
 Antes de começar, você precisará ter instalado em sua máquina:
-* [Node.js](https://nodejs.org/)
-* [PostgreSQL](https://www.postgresql.org/)
-* [VS Code](https://code.visualstudio.com/) ou outro editor de sua preferência
+* Node.js
+* PostgreSQL
+* VS Code (ou outro editor de sua preferência)
+
+### 🚀 Passo a Passo de Instalação
+
+1. Clone este repositório:
+   git clone https://github.com/seu-usuario/ValidaData.git
+
+2. Acesse a pasta do projeto:
+   cd ValidaData
+
+3. Instale as dependências:
+   npm install
+
+4. Configure o banco de dados:
+   Crie um banco PostgreSQL no DBeaver e rode os scripts/migrations da pasta /database.
+
+5. Execute a aplicação:
+   npm run dev
 
 ---
 
-### 🚀 Passo a Passo
+## 💡 Aprendizados e Desafios
 
-```bash
-# 1. Clone este repositório
-$ git clone [https://github.com/seu-usuario/ValidaData.git](https://github.com/seu-usuario/ValidaData.git)
-
-# 2. Acesse a pasta do projeto
-$ cd ValidaData
-
-# 3. Instale as dependências
-$ npm install
-
-# 4. Configure o banco de dados
-# Crie um banco PostgreSQL no DBeaver e rode as migrations/scripts da pasta /database
-
-# 5. Execute a aplicação em modo de desenvolvimento
-$ npm run dev
-
----
-
-###💡 Aprendizados e Desafios
 Este projeto permitiu consolidar diversos conhecimentos práticos de desenvolvimento de software e produto:
 
-Foco em UX/UI em Cenários Reais: Compreender a dor do usuário (perda de estoque e margens de lucro reduzidas) e traduzir isso em telas funcionais, simples e limpas no Figma.
-
-Integração de Backend e Banco de Dados: Modelagem e manipulação de tabelas relacionais no PostgreSQL com DBeaver e validação das rotas e requisições via Postman.
-
-Engenharia de Prompts & IA: Aprendizado em como atuar como arquiteto(a) do sistema, utilizando o Google AI Studio para agilizar a escrita de código TypeScript (.tsx) mantendo total controle técnico sobre o resultado final.
+* **Foco em UX/UI em Cenários Reais:** Compreender a dor do usuário (perda de estoque e margens de lucro reduzidas) e traduzir isso em telas funcionais, simples e limpas no Figma.
+* **Integração de Backend e Banco de Dados:** Modelagem e manipulação de tabelas relacionais no PostgreSQL com DBeaver e validação das rotas e requisições via Postman.
+* **Engenharia de Prompts & IA:** Aprendizado em como atuar como arquiteto(a) do sistema, utilizando o Google AI Studio para agilizar a escrita de código TypeScript (`.tsx`) mantendo total controle técnico sobre o resultado final.
 
 ---
 
-###✍️ Autor(a)
-Desenvolvido por Evelyn Barreto Bastos 👋
+## ✍️ Autor(a)
 
-Estudante de Análise e Desenvolvimento de Sistemas (ADS).
-
-Em constante busca por aprendizado, aprimoramento técnico e evolução na área de UX/UI e Desenvolvimento de Software.
+Desenvolvido por **Evelyn Barreto Bastos** 👋  
+* Estudante de Análise e Desenvolvimento de Sistemas (ADS).
+* Em constante busca por aprendizado, aprimoramento técnico e evolução na área de UX/UI e Desenvolvimento de Software.
 
 ---
 
-###📄 Licença
-Este projeto está sob a licença MIT — consulte o arquivo LICENSE para mais detalhes.
+## 📄 Licença
+
+Este projeto está sob a licença **MIT** — consulte o arquivo **LICENSE** para mais detalhes.

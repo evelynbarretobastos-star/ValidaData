@@ -1,0 +1,6 @@
+{
+  "name": "Valide Data - Controle de Validade Supermercado",
+  "description": "Sistema de gestão e controle de validades, lotes, promoções e baixas para supermercados e comércio.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

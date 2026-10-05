@@ -133,9 +133,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
           {/* PIN input */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5 flex justify-between">
+            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
               <span>Senha / PIN de Acesso</span>
-              <span className="text-[10px] text-slate-400 font-mono">Dica de teste: {selectedUser?.pin || '1234'}</span>
             </label>
             <div className="relative">
               <KeyRound className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
@@ -144,7 +143,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 maxLength={6}
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
-                placeholder="Insira o PIN (ex: 1234, 1111)"
+                placeholder="••••••"
                 autoFocus
                 className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 font-mono text-center tracking-widest text-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
               />

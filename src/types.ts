@@ -50,6 +50,7 @@ export interface MovementLog {
   barcode: string;
   productName: string;
   batchNumber: string;
+  expiryDate?: string;
   movementType: MovementType;
   quantity: number;
   unit: string;

@@ -121,6 +121,68 @@ export default function App() {
     saveBatches(updated);
   };
 
+  // Delete/Remove Product Batch from Inventory
+  const handleDeleteBatch = (batchId: string) => {
+    const updated = batches.filter(b => b.id !== batchId);
+    setBatches(updated);
+    saveBatches(updated);
+  };
+
+  // Delete/Remove Movement Log from History & Return product to stock
+  const handleDeleteMovementLog = (logId: string) => {
+    const logToRemove = logs.find(l => l.id === logId);
+    if (!logToRemove) return;
+
+    // Check if the movement had reduced the inventory (RETIRADO, VENDIDO, DESCARTADO)
+    if (
+      logToRemove.movementType === 'RETIRADO' ||
+      logToRemove.movementType === 'VENDIDO' ||
+      logToRemove.movementType === 'DESCARTADO'
+    ) {
+      const batchIndex = batches.findIndex(b => b.id === logToRemove.batchId);
+      let updatedBatches = [...batches];
+
+      if (batchIndex !== -1) {
+        // Return quantity to existing batch
+        const batch = batches[batchIndex];
+        const newQty = batch.quantity + logToRemove.quantity;
+        updatedBatches[batchIndex] = {
+          ...batch,
+          quantity: newQty,
+          initialQuantity: Math.max(batch.initialQuantity, newQty),
+        };
+      } else {
+        // Recreate the batch in inventory if it was previously removed
+        const restoredBatch: ProductBatch = {
+          id: logToRemove.batchId || `batch-${Date.now()}`,
+          barcode: logToRemove.barcode || 'SEM EAN',
+          name: logToRemove.productName,
+          category: 'Geral',
+          batchNumber: logToRemove.batchNumber || 'S/L',
+          manufacturingDate: '',
+          expiryDate: logToRemove.expiryDate || new Date(Date.now() + 15 * 86400000).toISOString().split('T')[0],
+          quantity: logToRemove.quantity,
+          initialQuantity: logToRemove.quantity,
+          unit: (logToRemove.unit as any) || 'un',
+          originalPrice: logToRemove.unitPriceAtTime || 0,
+          location: 'Retornado do Histórico',
+          createdUserId: currentUser.id,
+          createdUserName: currentUser.name,
+          createdAt: new Date().toISOString(),
+          notes: 'Lote restaurado ao estoque após remoção do registro de baixa do histórico',
+        };
+        updatedBatches = [restoredBatch, ...updatedBatches];
+      }
+
+      setBatches(updatedBatches);
+      saveBatches(updatedBatches);
+    }
+
+    const updatedLogs = logs.filter(l => l.id !== logId);
+    setLogs(updatedLogs);
+    saveLogs(updatedLogs);
+  };
+
   // Record Movement / Action (Retirado, Vendido, Promoção, Descartado)
   const handleRecordMovement = (
     batchId: string,
@@ -143,6 +205,7 @@ export default function App() {
       barcode: batch.barcode,
       productName: batch.name,
       batchNumber: batch.batchNumber,
+      expiryDate: batch.expiryDate,
       movementType,
       quantity: quantityMoved,
       unit: batch.unit,
@@ -312,13 +375,16 @@ export default function App() {
             onOpenPrintLabelModal={handleOpenPrintLabel}
             onNavigateToRegister={() => setActiveTab('register')}
             onOpenScannerModal={() => setIsScannerModalOpen(true)}
+            onDeleteBatch={handleDeleteBatch}
           />
         )}
 
         {activeTab === 'register' && (
           <ProductFormTab
             currentUser={currentUser}
+            batches={batches}
             onSaveBatch={handleSaveBatch}
+            onDeleteBatch={handleDeleteBatch}
             onOpenScannerModal={handleTriggerScannerModal}
             initialBarcode={registerBarcodePrefill}
           />
@@ -330,6 +396,8 @@ export default function App() {
             logs={logs}
             currentUser={currentUser}
             onRecordMovement={handleRecordMovement}
+            onDeleteBatch={handleDeleteBatch}
+            onDeleteMovementLog={handleDeleteMovementLog}
             selectedBatchForAction={selectedBatchForMovement}
             onClearSelectedBatch={() => setSelectedBatchForMovement(null)}
           />
@@ -369,6 +437,7 @@ export default function App() {
             logs={logs}
             batches={batches}
             currentUser={currentUser}
+            onDeleteMovementLog={handleDeleteMovementLog}
           />
         )}
       </main>
